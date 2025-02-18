@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./homePage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./homepage.js"></script>
+    <title>@media</title>
+</head>
+
+<body>
+    <div id="signInCanvas">
+        <div id="signInContent">
+            <span class="close-btn" onclick="closeSignInCanvas()">&times;</span><br>
+            <label for="" style="font-size: 20px; font-weight: 800;">登入</label><br>
+            <input id="keyInEmailBar" type="email" placeholder="E-mail" style="font-size: 20px; margin-top:20px ;">
+            <input id="keyInPasswordBar" type="password" placeholder="Password"
+                style="font-size: 20px; margin-top:20px ;">
+            <br><br><button id="signInBN">登入</button>
+        </div>
+    </div>
+    <div id="registerCanvas">
+        <div id="registerContent">
+            <span class="close-btn" onclick="closeRegisterCanvas()">&times;</span>
+            <div id="vipInforInput">
+
+                <label style="font-size: 24px; font-weight: 800;">活動報名</label><br><br>
+
+                <!-- 選擇活動 -->
+                <label for="eventSelect">選擇活動</label>
+                <select id="eventSelect" style="font-size: 18px; margin-top: 10px; width: 100%;">
+                    <option value="camino_frances">法國之路 - 33天</option>
+                    <option value="sarria_santiago">薩利亞至聖地牙哥 - 7天</option>
+                    <option value="camino_portugues">葡萄牙之路 - 13天</option>
+                </select><br><br>
+
+                <!-- 選擇日期 -->
+                <label for="eventDate">出發日期</label>
+                <input type="date" id="eventDate" style="font-size: 18px; margin-top: 10px; width: 100%;"><br><br>
+
+                <!-- 參加者姓名 -->
+                <label for="nameInput">姓名</label>
+                <input type="text" id="nameInput" placeholder="請輸入您的姓名"
+                    style="font-size: 18px; margin-top: 10px; width: 100%;">
+                <br><br>
+                <!-- 電子郵件 -->
+                <label for="emailInput">E-mail</label>
+                <input type="email" id="emailInput" placeholder="請輸入電子郵件"
+                    style="font-size: 18px; margin-top: 10px; width: 100%;">
+                <br><br>
+
+                <!-- 電話號碼 -->
+                <label for="phoneInput">電話號碼</label>
+                <input type="tel" id="phoneInput" placeholder="請輸入聯絡電話"
+                    style="font-size: 18px; margin-top: 10px; width: 100%;">
+                <br><br>
+
+                <!-- 備註 -->
+                <label for="notesInput">備註（選填）</label>
+                <textarea id="notesInput" placeholder="請輸入任何特殊需求或問題..."
+                    style="font-size: 18px; margin-top: 10px; width: 100%; height: 80px;"></textarea>
+                <br><br>
+
+                <!-- 提交報名 -->
+                <br>
+                <button id="submitRegister" onclick="submitRegistration()">提交報名</button>
+            </div>
+            <div id="calendarContainer">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="VIPCanvas">
+        <div id="VIPContent">
+            <span class="close-btn" onclick="closeVIPCanvas()">&times;</span>
+            <div id="VIPInformation"></div>
+        </div>
+    </div>
+    <div id="banner">
+        <img src="./image/DSCF9275-3.png" id="bannerImg">
+        <div id="bannerTitle">朝聖之路</div>
+        <div id="bannerSubTitle">Camino de <br> Santiago</div>
+
+    </div>
+    <div id="header">
+        <div id="logoArea">
+            <img src="./image/LinxploreLogo-1.png" alt="logoIMG" id="logoIMG">
+        </div>
+        <div id="nav" style="">
+            <div class="navElement"><a class="navClick" href="homePage.html">首頁</a></div>
+            <div class="navElement"><a class="navClick" onclick="openRegisterCanvas()">活動報名</a></div>
+            <div class="navElement"><a class="navClick" href="">活動介紹</a></div>
+        </div>
+        <button onclick="openSignInCanvas()" class="vipBn" id="signIn">會員登入</button>
+        <button onclick="openVIPCanvas()" class="vipBn" id="vipInfor" style="display: none;">會員資料</button>
+        <i class="fa-solid fa-bars" id="burger" onclick="openBurger()"></i>
+        <i class="fa-solid fa-bars" id="burger2" onclick="closeBurger()"></i>
+    </div>
+    <div id="route">
+        <div>
+            <p>爬升比較 (km)</p>
+            <canvas id="myChart"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [
+                        'Day1', 'Day2', 'Day3', 'Day4', 'Day5', 'Day6',
+                        'Day7', 'Day8', 'Day9', 'Day10', 'Day11', 'Day12',
+                        'Day13', 'Day14', 'Day15', 'Day16', 'Day17', 'Day18',
+                        'Day19', 'Day20', 'Day21', 'Day22', 'Day23', 'Day24',
+                        'Day25', 'Day26', 'Day27', 'Day28', 'Day29', 'Day30',
+                        'Day31', 'Day32', 'Day33'
+
+                    ],
+                    datasets: [{
+                        label: '法國之路',
+                        data: [330, 1050, 350, 300, 470, 450, 500, 360, 400, 550, 600, 850, 860, 840, 850, 850, 800, 780, 840, 800, 840, 800, 1150, 600, 600, 1200, 450, 450, 800, 190, 210, 200, 260],
+                        borderWidth: 1
+                    },
+                    {
+                        label: '薩利亞至聖地牙哥',
+                        data: [450, 450, 800, 190, 210, 200, 260],
+                        borderWidth: 1
+                    },
+                    {
+                        label: '葡萄牙之路',
+                        data: [10, 20, 20, 20, 10, 70, 50, 40, 50, 60, 50, 260]
+                        ,
+                        borderWidth: 1
+                    },
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            myChart.canvas.parentNode.style.height = '12px';
+            myChart.canvas.parentNode.style.width = '128px';
+
+        </script>
+        <br><br>
+        <div>
+            <p>降雨量比較 (mm)</p>
+            <canvas id="myChart2"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const ctx1 = document.getElementById('myChart2');
+
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUNE',
+                        'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+                    ],
+                    datasets: [{
+                        label: '法國之路',
+                        data: [70, 60, 60, 50, 40, 30, 20, 30, 50, 80, 90, 80]
+                        ,
+                        borderWidth: 1
+                    },
+                    {
+                        label: '薩利亞至聖地牙哥',
+                        data: [150, 120, 130, 90, 80, 40, 30, 40, 70, 120, 140, 150]
+                        ,
+                        borderWidth: 1
+                    },
+                    {
+                        label: '葡萄牙之路',
+                        data: [130, 110, 130, 90, 60, 40, 20, 30, 70, 120, 150, 140]
+                        ,
+                        borderWidth: 1
+                    }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            myChart.canvas.parentNode.style.height = '10px';
+            myChart.canvas.parentNode.style.width = '128px';
+
+        </script>
+        <br><br>
+        <div>
+            <p>氣溫比較 (°C)</p>
+            <canvas id="myChart3"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const ctx2 = document.getElementById('myChart3');
+
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: [
+                        'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUNE',
+                        'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+                    ],
+                    datasets: [{
+                        label: '法國之路',
+                        data: [5, 6, 9, 12, 16, 20, 22, 22, 19, 14, 9, 6]
+
+                        ,
+                        borderWidth: 1
+                    },
+                    {
+                        label: '薩利亞至聖地牙哥',
+                        data: [7, 8, 10, 12, 15, 18, 20, 20, 18, 15, 11, 8]
+
+                        ,
+                        borderWidth: 1
+                    },
+                    {
+                        label: '葡萄牙之路',
+                        data: [12, 12, 13, 15, 17, 20, 22, 22, 20, 17, 14, 12]
+
+                        ,
+                        borderWidth: 1
+                    }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            myChart.canvas.parentNode.style.height = '12px';
+            myChart.canvas.parentNode.style.width = '128px';
+
+        </script>
+
+    </div>
+    <div id="footer">
+        <img src="./image/0k.png" alt="" id="zeroKIMG">
+        <div><img id="logoWhite" src="./image/LinxploreLogo-white.png" alt=""></div>
+        <div>
+            <div><i class="fa-solid fa-phone footerIcon"></i>+886 982323264</div>
+            <div><i class="fa-solid fa-envelope footerIcon"></i>linxolore@gmail.com</div>
+        </div>
+        <div>
+            <div><i class="fa-solid fa-location-dot footerIcon"></i></i>台中市西區大墩十一街111號</ADDRESS>
+            </div>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook footerIcon"></i>
+            <i class="fa-brands fa-instagram footerIcon"></i>
+            <i class="fa-brands fa-linkedin footerIcon"></i>
+            <i class="fa-brands fa-youtube footerIcon"></i>
+        </div>
+    </div>
+</body>
+
+</html>

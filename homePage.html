@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./homePage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./homepage.js"></script>
+    <title>@media</title>
+</head>
+
+<body>
+    <div id="signInCanvas">
+        <div id="signInContent">
+            <span class="close-btn" onclick="closeSignInCanvas()">&times;</span><br>
+            <label for="" style="font-size: 20px; font-weight: 800;">登入</label><br>
+            <input id="keyInEmailBar" type="email" placeholder="E-mail" style="font-size: 20px; margin-top:20px ;">
+            <input id="keyInPasswordBar" type="password" placeholder="Password"
+                style="font-size: 20px; margin-top:20px ;">
+            <br><br><button id="signInBN">登入</button>
+        </div>
+    </div>
+    <div id="registerCanvas">
+        <div id="registerContent">
+            <div style="position: relative;">
+                <span class="close-btn" onclick="closeRegisterCanvas()">&times;</span>
+                <div id="vipInforInput">
+
+                    <label style="font-size: 24px; font-weight: 800;">活動報名</label><br><br>
+
+                    <!-- 選擇活動 -->
+                    <label for="eventSelect">選擇活動</label>
+                    <select id="eventSelect" style="font-size: 18px; margin-top: 10px; width: 100%;">
+                        <option value="camino_frances">法國之路 - 33天</option>
+                        <option value="sarria_santiago">薩利亞至聖地牙哥 - 7天</option>
+                        <option value="camino_portugues">葡萄牙之路 - 13天</option>
+                    </select><br><br>
+
+                    <!-- 選擇日期 -->
+                    <label for="eventDate">出發日期</label>
+                    <input type="date" id="eventDate" style="font-size: 18px; margin-top: 10px; width: 100%;"><br><br>
+
+                    <!-- 參加者姓名 -->
+                    <label for="nameInput">姓名</label>
+                    <input type="text" id="nameInput" placeholder="請輸入您的姓名"
+                        style="font-size: 18px; margin-top: 10px; width: 100%;">
+                    <br><br>
+                    <!-- 電子郵件 -->
+                    <label for="emailInput">E-mail</label>
+                    <input type="email" id="emailInput" placeholder="請輸入電子郵件"
+                        style="font-size: 18px; margin-top: 10px; width: 100%;">
+                    <br><br>
+
+                    <!-- 電話號碼 -->
+                    <label for="phoneInput">電話號碼</label>
+                    <input type="tel" id="phoneInput" placeholder="請輸入聯絡電話"
+                        style="font-size: 18px; margin-top: 10px; width: 100%;">
+                    <br><br>
+
+                    <!-- 備註 -->
+                    <label for="notesInput">備註（選填）</label>
+                    <textarea id="notesInput" placeholder="請輸入任何特殊需求或問題..."
+                        style="font-size: 18px; margin-top: 10px; width: 100%; height: 80px;"></textarea>
+                    <br><br>
+
+                    <!-- 提交報名 -->
+
+                </div>
+                <div id="calendarContainer">
+                    <div id="calendar"></div>
+                </div>
+                <button id="submitRegister" onclick="submitRegistration()">提交報名</button>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="VIPCanvas">
+        <div id="VIPContent">
+            <span class="close-btn" onclick="closeVIPCanvas()">&times;</span>
+            <div id="VIPInformation"></div>
+        </div>
+    </div>
+    <div id="banner">
+        <img src="./image/DSCF9275-3.png" id="bannerImg">
+        <div id="bannerTitle">朝聖之路</div>
+        <div id="bannerSubTitle">Camino de <br> Santiago</div>
+
+    </div>
+    <div id="header">
+        <div id="logoArea">
+            <img src="./image/LinxploreLogo-1.png" alt="logoIMG" id="logoIMG">
+        </div>
+        <div id="nav">
+            <div class="navElement"><a class="navClick" onclick="openRegisterCanvas()">活動報名</a></div>
+            <div class="navElement"><a class="navClick" href="routeInfor.html">路線資訊</a></div>
+            <div class="navElement"><a class="navClick" href="#intro">活動介紹</a></div>
+
+        </div>
+        <button onclick="openSignInCanvas()" class="vipBn" id="signIn">會員登入</button>
+        <button onclick="openVIPCanvas()" class="vipBn" id="vipInfor" style="display: none;">會員資料</button>
+        <i class="fa-solid fa-bars" id="burger" onclick="openBurger()"></i>
+        <i class="fa-solid fa-bars" id="burger2" onclick="closeBurger()" style="display: none;"></i>
+    </div>
+    <div id="chooseTour">
+        <div id="chooseTourTitle">你有這些選擇!
+            <a href="" style="margin-left: 10px; font-size: 30px; color: rgb(60, 139, 113);" id="chooseTourSubtitle">更多路線</a>
+        </div>
+        <div>
+            <div class="chooseCardArea">
+                <img src="./image/SaintJeanCenter.jpg" class="cardImg">
+                <div class="TourText">
+                    <div class="TourTextspan"> 法國之路</div>
+                    <br>
+                    <label for="" class="TourTextContent">790km - 33days - Advavced</label>
+                    <br>
+                    <a href="" class="TourTextBN1">查看細節</a>
+                    <a class="TourTextBN2" onclick="openRegisterCanvas()">立即報名</a>
+                </div>
+            </div>
+            <div class="chooseCardArea">
+                <img src="./image/葡萄牙.JPG" class="cardImg">
+                <div class="TourText">
+                    <div class="TourTextspan"> 薩利亞至聖地牙哥</div>
+                    <br>
+                    <label for="" class="TourTextContent">115km - 7days - Easy</label>
+                    <br>
+                    <a href="" class="TourTextBN1">查看細節</a>
+                    <a class="TourTextBN2" onclick="openRegisterCanvas()">立即報名</a>
+                </div>
+            </div>
+            <div class="chooseCardArea">
+                <div class="TourText">
+                    <div class="TourTextspan"> 葡萄牙之路</div>
+                    <br>
+                    <label for="" class="TourTextContent">260km - 13days - Advanced</label>
+                    <br>
+                    <a href="" class="TourTextBN1">查看細節</a>
+                    <a class="TourTextBN2" onclick="openRegisterCanvas()">立即報名</a>
+                </div>
+                <img src="./image/north.JPG" class="cardImg">
+            </div>
+        </div>
+    </div>
+    <div id="mapCanvas">
+        <div id="maptitle">我們將會帶著你!</div>
+        <div id="mapCtrl">
+            <input type="radio" id="routeCheck01" class="routeChoose" name="routeCheck" value="map1" checked><label
+                for="routeCheck01">法國之路</label>
+            <input type="radio" id="routeCheck02" class="routeChoose" name="routeCheck" value="map2"><label
+                for="routeCheck02">薩利亞至聖地牙哥</label>
+            <input type="radio" id="routeCheck03" class="routeChoose" name="routeCheck" value="map3"><label
+                for="routeCheck03">葡萄牙之路</label>
+            <a href="" id="downloadGPX" download="">下載GPX</a>
+        </div>
+        <iframe id="map1" class="map"
+            src="https://www.google.com/maps/d/embed?mid=110MpWAmONlF_x17tkKNUClxrBsqeSG4&ehbc=2E312F"
+            download="CaminoDeFrancais"></iframe>
+        <iframe id="map2" class="map"
+            src="https://www.google.com/maps/d/embed?mid=1dtzK-vXcPmcelqRdyQegGEOBGCi98Mk&ehbc=2E312F"></iframe>
+        <iframe id="map3" class="map"
+            src="https://www.google.com/maps/d/embed?mid=1ddYHAYiULtBJhn_oqDJtt2Xgw-tnXIQ&ehbc=2E312F"></iframe>
+    </div>
+    <div id="intro">
+        <p>
+            聖雅各之路（又稱聖地牙哥朝聖之路）是通往天主教神聖聖地之一——位於西班牙北部的聖地牙哥‧德孔波斯特拉——的傳統朝聖路線。自中世紀以來，無數朝聖者沿著這條古老而莊嚴的道路跋涉，尋求信仰的洗禮與內心的平靜。這條路線起源於歐洲大陸，主要由法國各地出發，經由崇山峻嶺的庇里牛斯山脈，最終穿越風光明媚的西班牙北部平原，展現出一幅幅自然與人文交織的美麗畫卷。
+
+            在這漫長而艱辛的旅途中，朝聖者們不僅體驗到身體極限的挑戰，更在沿途的古城堡、修道院、鄉村小鎮中感受到歷史的厚重與文化的積淀。每一步行走都彷彿在與過去對話，見證著歷史上無數信徒的堅持與信仰的力量。聯合國教科文組織更以其獨特的歷史價值和文化意義，將聖雅各之路列為世界遺產，這也使它成為全球僅有的兩處「巡禮路」世界遺產之一，與羅馬、耶路撒冷並稱為天主教三大朝聖地。
+
+            今日，聖雅各之路不僅吸引著虔誠的信徒，更成為眾多尋求心靈慰藉與生活啟示的旅人的熱門路線。沿途風景從壯闊的山川到恬靜的村莊，每一段旅程都蘊含著豐富的故事與深刻的感悟。無論是獨自前行還是與友同行，這條古道都為每個人提供了一個反思自我、尋找內在平衡的契機。從古至今，聖雅各之路以其獨特的魅力和精神內涵，持續感召著世世代代的旅人，成為連結歷史、文化與信仰的重要象徵。
+        </p>
+        <div>
+            <video class="video" autoplay muted loop>
+                <source src="./video/demo-4.mp4" type="video/mp4">
+            </video>
+            <div id="whyTitle">為何選擇Linxplore?</div>
+        </div>
+        <div id="why">
+            踏上穿越西班牙、法國和葡萄牙的世界聞名的聖地牙哥朝聖之路！我們的 Camino 規劃師擁有豐富的經驗，15
+            年來一直為我們的忠實客戶規劃健行和騎乘假期。在Linxplore，我們的專家將從頭到尾為您量身打造夢想中的聖地牙哥朝聖之路之旅，因此您所要做的就是踏上您的冒險之旅。
+        </div>
+    </div>
+    <div id="footer">
+        <img src="./image/0k.png" alt="" id="zeroKIMG">
+        <div><img id="logoWhite" src="./image/LinxploreLogo-white.png" alt=""></div>
+        <div>
+            <div><i class="fa-solid fa-phone footerIcon"></i>+886 982323264</div>
+            <div><i class="fa-solid fa-envelope footerIcon"></i>linxolore@gmail.com</div>
+        </div>
+        <div>
+            <div><i class="fa-solid fa-location-dot footerIcon"></i></i>台中市西區大墩十一街111號</ADDRESS>
+            </div>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook footerIcon"></i>
+            <i class="fa-brands fa-instagram footerIcon"></i>
+            <i class="fa-brands fa-linkedin footerIcon"></i>
+            <i class="fa-brands fa-youtube footerIcon"></i>
+        </div>
+    </div>
+</body>
+
+</html>

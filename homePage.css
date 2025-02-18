@@ -1,0 +1,1409 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#banner {
+    display: block;
+    width: 100%;
+    height: 500px;
+    top: 0px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#bannerImg {
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+#bannerTitle {
+    position: absolute;
+    bottom: 10px;
+    font-size: 150px;
+    color: rgb(255, 255, 255);
+    left: 10vw;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.6rem;
+}
+
+#bannerSubTitle {
+    position: absolute;
+    bottom: 35px;
+    font-size: 50px;
+    color: white;
+    right: 8vw;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: right;
+}
+
+#header {
+    background-color: rgb(255, 255, 255);
+    width: 80vw;
+    height: 70px;
+    margin: 0 auto;
+    position: sticky;
+    top: 0px;
+    padding-left: 3%;
+    z-index: 1000;
+}
+
+#logoArea {
+    display: inline-block;
+    font-size: 60px;
+    background-color: rgba(250, 250, 210, 0);
+}
+
+#logoIMG {
+    width: 150px;
+    height: 40px;
+    margin: 1rem;
+}
+
+#nav {
+    font-size: 60px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.navElement {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    position: relative;
+    text-decoration: none;
+    border: 0px;
+}
+
+.navClick {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.navClick:hover {
+    background-color: rgb(198, 255, 236);
+}
+
+.vipBn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 100px;
+    text-align: center;
+    padding: 10px auto;
+    margin-right: 3%;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(27, 120, 105);
+    text-decoration: none;
+    border: 0px;
+}
+
+#signInCanvas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+
+    align-items: center;
+}
+
+#signInContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: 220px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#registerCanvas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    align-items: center;
+}
+
+#registerContent {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    height: 700px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 80px;
+    position: relative;
+}
+
+#VIPCanvas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    align-items: center;
+    /* visibility: hidden; */
+
+}
+
+#VIPContent {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    height: 920px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    position: relative;
+    padding: 60px;
+}
+
+#VIPInformation {
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-orientation: mixed;
+    color: rgb(24, 60, 43);
+}
+
+#VIPInformation>h2 {
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-orientation: mixed;
+    color: rgb(56, 147, 104);
+}
+
+.registration-entry {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#vipInforInput {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-orientation: mixed;
+    color: rgb(24, 60, 43);
+}
+
+#calendarContainer {
+    display: inline-block;
+    width: 40%;
+    position: absolute;
+    top: 189px;
+    margin-left: 5%;
+}
+
+#submitRegister {
+    font-size: 17px;
+    height: 40px;
+    width: 130px;
+    background-color: rgb(167, 233, 205);
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 20px;
+    position: fixed;
+}
+
+#submitRegister:hover {
+    font-size: 17px;
+    height: 40px;
+    width: 130px;
+    background-color: rgb(39, 88, 67);
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+}
+
+
+.calendar-month {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: inline-block;
+    width: 80%;
+    background-color: #f9f9f9;
+}
+
+.calendar-month h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.days span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.active-day {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.inactive-day {
+    background-color: #ddd;
+    color: black;
+}
+
+#signInBN {
+    font-size: 20px;
+    height: 40px;
+    width: 250px;
+    background-color: rgb(167, 233, 205);
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#signInBN:hover {
+    background-color: rgb(85, 222, 136);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.vipBn:hover {
+    background-color: rgb(133, 199, 144);
+}
+
+
+#chooseTour {
+    background-color: rgb(221, 245, 233);
+    width: 80vw;
+    height: 620px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 30px;
+    padding-top: 2%;
+
+}
+
+#chooseTourTitle {
+    background-color: rgba(21, 117, 77, 0);
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 80px;
+    color: rgb(79, 142, 114);
+    font-size: 50px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+
+}
+
+.chooseCardArea {
+    background-color: rgba(27, 120, 105, 0);
+    display: inline-block;
+    width: 29.3%;
+    height: 450px;
+    margin: 1.5%;
+    vertical-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cardImg {
+    width: 90%;
+    height: 50%;
+    position: absolute;
+    left: 5.5%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    border: solid 8px rgb(192, 225, 198);
+    z-index: 1;
+}
+
+.TourText {
+    background-color: rgba(250, 235, 215, 0);
+    position: absolute;
+    top: 250px;
+    left: 7%;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    width: 90%;
+}
+
+.TourTextspan {
+    font-size: 24px;
+}
+
+.TourTextBN1 {
+    text-decoration: none;
+    display: flex;
+    color: black;
+    background-color: rgb(67, 190, 159);
+    width: 100%;
+    margin: 25px auto;
+    height: 50px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.TourTextBN2 {
+    text-decoration: none;
+    display: flex;
+    color: black;
+    background-color: rgb(67, 190, 190);
+    width: 100%;
+    margin: 10px auto;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#mapCanvas {
+    background-color: rgba(211, 235, 216, 0);
+    width: 80vw;
+    height: 700px;
+    margin: 0 auto;
+    border-radius: 30px;
+    position: relative;
+}
+
+#maptitle {
+    color: rgb(79, 142, 114);
+    font-size: 50px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+    margin-left: 2%;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+
+}
+
+#mapCtrl {
+    background-color: rgb(58, 58, 58);
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 105px;
+    z-index: 3;
+    color: white;
+    font-size: 20px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.routeChoose {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+#downloadGPX {
+    width: 100px;
+    text-align: center;
+    padding: 10px auto;
+    margin-right: 3%;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(27, 120, 105);
+    text-decoration: none;
+    border: 0px;
+    position: absolute;
+    left: 600px;
+    top: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#downloadGPX:hover {
+    background-color: rgb(133, 199, 144);
+}
+
+.map {
+    width: 99.85%;
+    height: 80%;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0px;
+
+}
+
+#intro {
+    background-color: rgba(241, 245, 211, 0);
+    width: 80vw;
+    height: 1450px;
+    margin: 0 auto;
+    margin-top: 5%;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+#route {
+    background-color: rgba(241, 245, 211, 0);
+    width: 80vw;
+    height: 1250px;
+    margin: 0 auto;
+    margin-top: 2%;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+#intro>p {
+
+    font-size: 25px;
+    display: block;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    line-height: 45px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+.video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+#intro>div {
+    position: relative;
+}
+
+#whyTitle {
+    display: flex;
+    position: absolute;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+    font-size: 70px;
+    left: 50px;
+    bottom: 45px;
+    color: white;
+    align-items: center;
+
+}
+
+#why {
+    font-size: 25px;
+    display: inline-block;
+    margin-top: 6%;
+    line-height: 45px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+    width: 75%;
+}
+
+#zeroKIMG {
+    display: block;
+    height: 300px;
+    position: absolute;
+    right: 10vw;
+    position: absolute;
+    bottom: 350px;
+    z-index: 1;
+}
+
+#footer {
+    background-color: rgb(21, 117, 77);
+    width: 100%;
+    height: 350px;
+    bottom: 0px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+}
+
+#footer>div {
+    background-color: rgba(194, 241, 124, 0);
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#footer>div>div {
+    display: inline-block;
+    color: white;
+    margin-right: 40px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+#footer>div>div>i {
+    margin-right: 20px;
+}
+
+#footer>div>i {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#logoWhite {
+    margin-top: 50px;
+    width: 200px;
+}
+
+.footerIcon {
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#route {
+    width: 60%;
+    height: auto;
+    margin-top: 50px;
+    border: solid lightblue 5px;
+    padding: 60px;
+    border-radius: 30px;
+    font-family: "Noto Sans TC", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+    margin-bottom: 100px;
+}
+
+#burger {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh; /* 確保最小高度填滿螢幕 */
+        display: flex;
+        flex-direction: column; /* 確保內容從上到下排列 */
+        align-items: center; /* 水平置中內容 */
+        justify-content: flex-start; /* 從上往下排列 */
+        overflow-x: hidden; /* 禁止水平滾動 */
+    }
+
+    #banner {
+        display: block;
+        width: 100%;
+        height: 200px;
+        top: 0px;
+        margin-bottom: 3px;
+        position: relative;
+    }
+
+    #bannerImg {
+        object-fit: cover;
+        height: 200px;
+        width: 100%;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    }
+
+    #bannerTitle {
+        position: absolute;
+        bottom: 10px;
+        font-size: 15vw;
+        color: rgb(255, 255, 255);
+        left: 5%;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.6rem;
+    }
+
+    #bannerSubTitle {
+        position: absolute;
+        bottom: 19px;
+        font-size: 20px;
+        color: white;
+        right: 5%;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        text-align: right;
+    }
+
+    #header {
+        background-color: rgb(255, 255, 255);
+        width: 100vw;
+        height: 55px;
+        margin: 0 auto;
+        position: sticky;
+        top: 0px;
+        padding-left: 2%;
+        z-index: 1000;
+        position: relative;
+    }
+
+    #logoArea {
+        display: inline-block;
+        font-size: 60px;
+        background-color: rgba(250, 250, 210, 0);
+    }
+
+    #logoIMG {
+        width: 100px;
+        height: 30px;
+        margin: 1rem;
+    }
+
+    #nav {
+        font-size: 40px;
+        width: 200px;
+        right: 0;
+        top: 63px;
+        display: inline-block;
+        vertical-align: top;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        display: none;
+    }
+
+    .navElement {
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px;
+        position: relative;
+        text-decoration: none;
+        border: 0px;
+    }
+
+    .navClick {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        position: relative;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .navClick:hover {
+        background-color: rgb(198, 255, 236);
+    }
+
+    .vipBn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 16%;
+        top: 19px;
+        width: 100px;
+        text-align: center;
+        padding: 10px auto;
+        margin-right: 3%;
+        height: 40px;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        background-color: rgb(27, 120, 105);
+        text-decoration: none;
+        border: 0px;
+        height: 25px;
+    }
+
+    #burger {
+        font-size: 25px;
+        display: inline-block;
+        position: absolute;
+        top:4.5vw;
+        right: 10%;
+    }
+    #burger2 {
+        font-size: 25px;
+        display: inline-block;
+        position: absolute;
+        top:4.5vw;
+        right: 10%;
+        display: none;
+    }
+
+    #signInCanvas {
+        /* display: none; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    #signInContent {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        height: 220px;
+        text-align: center;
+        position: fixed;
+        top: 35vh;
+        left: 10.5vw;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        align-items: center;
+    }
+
+    #registerCanvas {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        align-items: center;
+    }
+
+    #registerContent {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 71vw;
+        height: auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        position: fixed;
+        top: 4%;
+        left: 10vw;
+    }
+
+    #VIPCanvas {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        align-items: center;
+        /* visibility: hidden; */
+
+    }
+
+    #VIPContent {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        width: 35%;
+        height: 920px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        align-items: center;
+        vertical-align: middle;
+        margin: 0 auto;
+        position: fixed;
+        top: 4%;
+        left: 10vw;
+    }
+
+    #VIPInformation {
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        text-orientation: mixed;
+        color: rgb(24, 60, 43);
+    }
+
+    #VIPInformation>h2 {
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        text-orientation: mixed;
+        color: rgb(56, 147, 104);
+    }
+
+    .registration-entry {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    #vipInforInput {
+        background: white;
+        padding: 20px;
+        padding-bottom: 0%;
+        border-radius: 10px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        text-orientation: mixed;
+        color: rgb(24, 60, 43);
+        display: block !important;
+        width: 85% !important;
+    }
+
+    #calendarContainer {
+        width: 72%;
+        position: absolute;
+        top: 650px;
+        margin-left: 90px;
+        display: contents;
+        margin-bottom: 20%;
+    }
+    #calendar {
+        margin-bottom: 15%;
+    }
+
+    #submitRegister {
+        font-size: 17px;
+        height: 40px;
+        width: 130px;
+        background-color: rgb(167, 233, 205);
+        border: 0px;
+        border-radius: 10px;
+        font-weight: 600;
+        position: absolute;
+        bottom: -4%;
+    }
+
+    #submitRegister:hover {
+        font-size: 17px;
+        height: 40px;
+        width: 130px;
+        background-color: rgb(39, 88, 67);
+        border: 0px;
+        border-radius: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+
+    .calendar-month {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        display: inline-block;
+        width: 92%;
+        height: 20%;
+        background-color: #f9f9f9;
+   
+    }
+
+    .calendar-month h3 {
+        margin: 0;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .days {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .days span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin: 3px;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .active-day {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .inactive-day {
+        background-color: #ddd;
+        color: black;
+    }
+
+    #signInBN {
+        font-size: 20px;
+        height: 40px;
+        width: 250px;
+        background-color: rgb(167, 233, 205);
+        border: 0px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    #signInBN:hover {
+        background-color: rgb(85, 222, 136);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        color: gray;
+    }
+
+    .vipBn:hover {
+        background-color: rgb(133, 199, 144);
+    }
+
+
+    #chooseTour {
+        background-color: rgb(221, 245, 233);
+        width: 90vw;
+        height: 490px;
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border-radius: 30px;
+        padding: 1%;
+        padding-top: 2%;
+
+    }
+
+    #chooseTourTitle {
+        background-color: rgba(21, 117, 77, 0);
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-right: 2%;
+        height: 60px;
+        color: rgb(79, 142, 114);
+        font-size: 30px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+
+    }
+    #chooseTourSubtitle{
+        display: none;
+    }
+
+    .chooseCardArea {
+        background-color: rgba(27, 120, 105, 0);
+        display: inline-block;
+        width: 28.7%;
+        height: 450px;
+        margin: 1.5%;
+        vertical-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cardImg {
+        width: 90%;
+        height: 20%;
+        position: absolute;
+        left: 5.5%;
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: center;
+        border: solid 4px rgb(192, 225, 198);
+        z-index: 1;
+        align-items: center;
+    }
+
+    .TourText {
+        background-color: rgba(250, 235, 215, 0);
+        position: absolute;
+        top: 110px;
+        left: 10%;
+        color: rgb(0, 0, 0);
+        z-index: 1;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        width: 90%;
+    }
+
+    .TourTextspan {
+        font-size: 11px;
+    }
+
+    .TourTextBN1 {
+        text-decoration: none;
+        display: flex;
+        color: black;
+        background-color: rgb(67, 190, 159);
+        width: 100%;
+        margin: 25px auto;
+        height: 50px;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .TourTextBN2 {
+        text-decoration: none;
+        display: flex;
+        color: black;
+        background-color: rgb(67, 190, 190);
+        width: 100%;
+        margin: 10px auto;
+        height: 50px;
+        text-align: center;
+        border-radius: 15px;
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #mapCanvas {
+        background-color: rgba(211, 235, 216, 0);
+        width: 90vw;
+        height: 700px;
+        margin: 0 auto;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    #maptitle {
+        color: rgb(79, 142, 114);
+        font-size: 40px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+        margin-left: 2%;
+        height: 80px;
+        position: absolute;
+        top: 10px;
+
+    }
+
+    #mapCtrl {
+        background-color: rgb(58, 58, 58);
+        height: 150px;
+        width: 101%;
+        position: absolute;
+        top: 105px;
+        z-index: 3;
+        color: white;
+        font-size: 17px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .routeChoose {
+        margin-left: 40px;
+        margin-top: 40px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    #downloadGPX {
+        width: 100px;
+        text-align: center;
+        padding: 10px auto;
+        margin-right: 3%;
+        height: 28px;
+        color: rgb(255, 255, 255);
+        border-radius: 10px;
+        background-color: rgb(27, 120, 105);
+        text-decoration: none;
+        border: 0px;
+        position: absolute;
+        left: 200px;
+        top: 90px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #downloadGPX:hover {
+        background-color: rgb(133, 199, 144);
+    }
+
+    .map {
+        width: 99.85%;
+        height: 80%;
+        border-radius: 20px;
+        position: absolute;
+        bottom: 0px;
+
+    }
+
+    #intro {
+        background-color: rgba(241, 245, 211, 0);
+        width: 80vw;
+        height: 1330px;
+        margin: 0 auto;
+        margin-top: 5%;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    #route {
+        background-color: rgba(241, 245, 211, 0);
+        width: 80vw;
+        height: 1250px;
+        margin: 0 auto;
+        margin-top: 2%;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    #intro>p {
+
+        font-size: 15px;
+        display: block;
+        margin-top: 6%;
+        margin-bottom: 6%;
+        line-height: 30px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.1rem;
+    }
+
+    .video {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        display: inline-block;
+    }
+
+    #intro>div {
+        position: relative;
+    }
+
+    #whyTitle {
+        display: flex;
+        position: absolute;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+        font-size: 70px;
+        left: 20px;
+        top: 45px;
+        bottom: 45px;
+        color: white;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    #why {
+        font-size: 15px;
+        display: inline-block;
+        margin-top: 6%;
+        line-height: 30px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.1rem;
+        width: 55%;
+    }
+
+    #zeroKIMG {
+        display: block;
+        height: 300px;
+        position: absolute;
+        right: 8vw;
+        position: absolute;
+        bottom: 200px;
+        z-index: 1;
+        
+    }
+
+    #footer {
+        background-color: rgb(21, 117, 77);
+        width: 100%;
+        height: 200px;
+        bottom: 0px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 0;
+    }
+
+    #footer>div {
+        background-color: rgba(194, 241, 124, 0);
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    #footer>div>div {
+        display: inline-block;
+        color: white;
+        margin-right: 40px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+    }
+
+    #footer>div>div>i {
+        margin-right: 20px;
+    }
+
+    #footer>div>i {
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    #logoWhite {
+        margin-top: 10px;
+        width: 120px;
+    }
+
+    .footerIcon {
+        color: white;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #route {
+        width: 60%;
+        height: auto;
+        margin-top: 50px;
+        border: solid lightblue 5px;
+        padding: 60px;
+        border-radius: 30px;
+        font-family: "Noto Sans TC", serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+        margin-bottom: 100px;
+    }
+    #myChart{
+        width: 300%;
+    }
+}
